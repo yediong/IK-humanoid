@@ -49,8 +49,7 @@ pip install -e .
 git clone https://github.com/yediong/IK_humanoid.git
 ```
 
-2. Modify sys.path.append(“/home/unitree/h1/legged_gym”) in legged_gym/scripts/train.py , legged_gym/scripts/play.py
-for your own path.
+2. Modify sys.path.append(“/home/unitree/h1/legged_gym”) in legged_gym/scripts/play_g1_handmove.py , legged_gym/scripts/play_g1_ik.py for your own path.
 
 3. Activate RL environments:
 ```bash
