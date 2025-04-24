@@ -1,14 +1,14 @@
 # Overview
-Using inverse kinematics (IK) solving to achieve partial hand movements for the Unitree G1 robot, based on the [RL example code framework](https://github.com/unitreerobotics/unitree_rl_gym) from Unitree's official website. 
+Using **inverse kinematics (IK)** solving to achieve partial hand movements for the **Unitree G1 robot**, based on the [RL example code framework](https://github.com/unitreerobotics/unitree_rl_gym) from Unitree's official website. 
 
 # Quick Start
-The following describes how this project will be deployed. Configuration method reference for IsaacGym, rsl_rl and raw file (unitree_rl_gym): [rl_control_routine](https://support.unitree.com/home/zh/G1_developer/rl_control_routine)
+The following describes how this project will be deployed. Configuration method reference for **IsaacGym, rsl_rl** and raw file (unitree_rl_gym): [rl_control_routine](https://support.unitree.com/home/zh/G1_developer/rl_control_routine)
 
 ## environment
 1. Users are recommanded to run this project in Ubuntu 20.04 and ROS noetic environment.
 2. Users are recommanded to use the following versions of the software:
-    - Python 3.8
-    - torch==1.10.0+cu113
+    - **Python 3.8**
+    - **torch==1.10.0+cu113**
 
 ## Dependencies
 1. [IssacGym](https://developer.nvidia.com/isaac-gym)
@@ -28,7 +28,7 @@ Installing CUDA, pytorch:
 pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 ```
 
-Download the Isaac Gym Preview 4 simulation platform, unzip it into the python directory, and install it using pip:
+Download the [Isaac Gym Preview 4 simulation platform](https://developer.nvidia.com/isaac-gym), unzip it into the python directory, and install it using pip:
 ```bash
 # current directory: isaacgym/python
 pip install -e .
