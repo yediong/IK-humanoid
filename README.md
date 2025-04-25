@@ -41,7 +41,6 @@ git checkout v1.0.2
 pip install -e .
 ```
 
-
 ## Run
 1. Deploy the code for this project：
 
