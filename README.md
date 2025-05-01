@@ -1,6 +1,8 @@
 # Overview
 Using **inverse kinematics (IK)** solving to achieve partial hand movements for the **Unitree G1 robot**, based on the [RL example code framework](https://github.com/unitreerobotics/unitree_rl_gym) from Unitree's official website. 
 
+<img src="image-11.png" alt="1">
+
 # Quick Start
 The following describes how this project will be deployed. Configuration method reference for **IsaacGym, rsl_rl** and raw file (unitree_rl_gym): [rl_control_routine](https://support.unitree.com/home/zh/G1_developer/rl_control_routine)
 
