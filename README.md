@@ -47,7 +47,7 @@ pip install -e .
 1. Deploy the code for this project：
 
 ```bash
-git clone https://github.com/yediong/IK_humanoid.git
+git clone https://github.com/yediong/IK-humanoid.git
 ```
 
 2. Modify sys.path.append(“/home/unitree/h1/legged_gym”) in legged_gym/scripts/play_g1_handmove.py , legged_gym/scripts/play_g1_ik.py for your own path.
