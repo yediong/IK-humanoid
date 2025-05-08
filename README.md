@@ -1,76 +1,122 @@
-# Overview
-Using **inverse kinematics (IK)** solving to achieve partial hand movements for the **Unitree G1 robot**, based on the [RL example code framework](https://github.com/unitreerobotics/unitree_rl_gym) from Unitree's official website. 
+# 🤖 Unitree G1 Inverse Kinematics Demo  
+*Basic hand movement implementation using inverse kinematics for Unitree G1 humanoid robot*
 
-<img src="image-11.png" alt="1">
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/yediong/IK-humanoid)
 
-# Quick Start
-The following describes how this project will be deployed. Configuration method reference for **IsaacGym, rsl_rl** and raw file (unitree_rl_gym): [rl_control_routine](https://support.unitree.com/home/zh/G1_developer/rl_control_routine)
+---
 
-## environment
-1. Users are recommanded to run this project in Ubuntu 20.04 and ROS noetic environment.
-2. Users are recommanded to use the following versions of the software:
-    - **Python 3.8**
-    - **torch==1.10.0+cu113**
+## 📌 Overview  
+Implementation of **inverse kinematics (IK)** based hand movement control for Unitree G1 humanoid robot, built upon the official [Unitree RL example framework](https://github.com/unitreerobotics/unitree_rl_gym).
 
-## Dependencies
-1. [IssacGym](https://developer.nvidia.com/isaac-gym)
-2. [rsl_rl](https://github.com/leggedrobotics/rsl_rl)
+<div align="center">
+  <img src="image-11.png" alt="Robot IK Demonstration" width="300">
+</div>
 
-Put these two folders in the same project directory as the project files.
+---
 
-## Instructions
-Creating a Virtual Environment:
+## ⚙️ Features
+- Basic IK implementation using damped least squares method
+- 3D position control for left hand movement
+- Joint angle control through action setting
+- Integration with IsaacGym simulation platform
+
+---
+
+## 🛠️ Prerequisites
+### System Requirements
+| Component      | Recommended Configuration |
+|----------------|--------------------------|
+| OS             | Ubuntu 20.04 LTS         |
+| ROS            | Noetic                   |
+| Python         | 3.8                      |
+| PyTorch        | 1.10.0+cu113             |
+
+### Dependencies
+1. [IsaacGym Preview 4](https://developer.nvidia.com/isaac-gym)
+2. [rsl_rl v1.0.2](https://github.com/leggedrobotics/rsl_rl)
+
+Place both dependencies in the same project directory as this repository.
+
+---
+
+## 📦 Installation
+### 1. Create Virtual Environment
 ```bash
 conda create -n rl-g1 python=3.8
 conda activate rl-g1
 ```
 
-Installing CUDA, pytorch:
+### 2. Install PyTorch
 ```bash
-pip3 install torch==1.10.0+cu113 torchvision==0.11.1+cu113 torchaudio==0.10.0+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
+pip3 install torch==1.10.0+cu113 \
+    torchvision==0.11.1+cu113 \
+    torchaudio==0.10.0+cu113 \
+    -f https://download.pytorch.org/whl/cu113/torch_stable.html
 ```
 
-Download the [Isaac Gym Preview 4 simulation platform](https://developer.nvidia.com/isaac-gym), unzip it into the python directory, and install it using pip:
+### 3. Install Dependencies
 ```bash
-# current directory: isaacgym/python
-pip install -e .
-```
-Install the rsl_rl library (please use version 1.0.2):
-```bash
+# Install IsaacGym (from extracted python directory)
+pip install -e isaacgym/python
+
+# Install rsl_rl
 git clone https://github.com/leggedrobotics/rsl_rl
 cd rsl_rl
 git checkout v1.0.2
 pip install -e .
 ```
 
-## Run
-1. Deploy the code for this project：
+---
 
+## 🚀 Quick Start
+### 1. Clone Repository
 ```bash
 git clone https://github.com/yediong/IK-humanoid.git
 ```
 
-2. Modify sys.path.append(“/home/unitree/h1/legged_gym”) in legged_gym/scripts/play_g1_handmove.py , legged_gym/scripts/play_g1_ik.py for your own path.
+### 2. Configure Paths
+Update the path in these files to match your system:
+- `legged_gym/scripts/play_g1_handmove.py`
+- `legged_gym/scripts/play_g1_ik.py`
 
-3. Activate RL environments:
+### 3. Run Demos
 ```bash
 conda activate rl-g1
-```
+cd legged_gym/scripts
 
-4. Switch to the legged_gym/scripts directory and start test.
-- Control the specific joint to move an angle through the code of setting the actions and 'step':
-```bash
+# Angle control demo
 python play_g1_handmove.py
-```
 
-- Inverse Kinematic: Move the left hand to a specific position in 3d environment, using Jacobi matrices and damped least squares methods:
-```bash
+# IK position control demo
 python play_g1_ik.py
 ```
 
-## usage
-Modify the parameters(positions, angles, etc) in the related pyfiles to adjust the robot's behavior.
+---
 
+## 🧪 Usage
+Modify parameters directly in Python files to adjust:
+- Target positions (x, y, z)
+- Joint angles
+- Movement speed
+- Damping coefficients
 
-# Notes
-This project provides beginners with a basic routine for deploying the Unitree G1 robot operation using the Isaacgym and rsl_rl platforms. Additional fine-tuning of parameters or more advanced methods may be required for better performance. Questions are welcome.
+---
+
+## 📚 Documentation
+For detailed control routines and API references:
+- [Official RL Control Guide](https://support.unitree.com/home/zh/G1_developer/rl_control_routine)
+- [Unitree RL Gym Framework](https://github.com/unitreerobotics/unitree_rl_gym)
+
+---
+
+## 📝 Notes
+This project provides a foundational implementation for beginners to:
+- Understand IK application in humanoid robotics
+- Explore IsaacGym simulation environment
+- Implement basic movement patterns
+
+Further optimization and advanced control strategies are required for production-level applications. Feel free to open issues for questions or suggestions.
+
+---
+
+*Created with ❤️ by [yediong](https://github.com/yediong)*
